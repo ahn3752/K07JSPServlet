@@ -42,9 +42,9 @@ public class MemberDTO {
 		this.regidate = regidate;
 	}
 	//getter/setter
-	public String getId() {
-		return id;
-	}
+	
+	  public String getId() { return id; }
+	 
 	public void setId(String id) {
 		this.id = id;
 	}

@@ -70,11 +70,11 @@ request.setAttribute("requestMember", first);
  		포워드의 경우 page영역은 공유되지 않으나, request영역은
  		공유된다. 
  	-->
-	<h3>포워드로 페이지 전달하기</h3>
+	<%-- <h3>포워드로 페이지 전달하기</h3>
 	<%
 		request.getRequestDispatcher("ApplicationResult.jsp")
 			.forward(request, response);
-	%>
+	%> --%>
 			
  	<!--  
  		외부파일 인클루드 : incldue 지시어를 통해 페이지를

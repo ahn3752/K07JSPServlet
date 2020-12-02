@@ -36,7 +36,7 @@ if(font==null || font.length()==0) font="Verdana";
 	
 	<h3>숫자를 입력후 버튼을 눌러주세요</h3>
  	<!-- 
- 		action : 현제페이지로 설정됨
+ 		action : 현재페이지로 설정됨
  		method : get방식으로 설정됨. 따라서 입력된 폼값은
  			주소표시줄에서 쿼리스트링으로 확인가능함. 
  	 -->

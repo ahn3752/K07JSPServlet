@@ -29,15 +29,7 @@
 		문자열입력 : <input type="text" name="paramHan" />
 		<input type="submit" value="Post방식" />
 	</form>
-	
-	
-	
-	
 
-
-
-
-	
 	<h2>파라미터 및 값전달</h2>
 	<%
 	/*

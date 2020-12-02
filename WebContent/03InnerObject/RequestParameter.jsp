@@ -67,8 +67,7 @@ if(favo != null){
 textarea를 통해 입력받은 값은 엔터키(줄바꿈기호 \r\n)가 포함되어있다.
 웹브라우저에 출력할때에는 특수기호를 <br>로 변환후 출력해야한다. 
 */
-String self_intro = request.getParameter("self_intro")
-						.replace("\r\n","<br/>");
+String self_intro = request.getParameter("self_intro").replace("\r\n","<br/>");
 %>
 <ul>
 	<li>이름 : <%=name %></li>

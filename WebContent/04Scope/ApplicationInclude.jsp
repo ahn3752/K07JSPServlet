@@ -23,7 +23,7 @@
 	out.println(pMemberStr);
 	%>
 	
-	<h3>request영역에 저장된 객체</h3>
+	<h3>request영역에 저장된 객체zzzzzzzzzz</h3>
 	<%
 	MemberDTO requestMember =
 		(MemberDTO)request.getAttribute("requestMember");
