@@ -47,7 +47,7 @@ if(cookies!=null){
 		//쿠키명중 팝업닫기 관련 항목이 있다면 저장된 값을 가져온다. 
 		if(cookieName!=null && cookieName.equals("PopupClose")){
 			//변수 값이 off로 변경된다. 
-			isPopup = cookieValue;
+			isPopup = cookieValue; //off
 		}
 	}		
 }
