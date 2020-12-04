@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -39,5 +41,36 @@
 	<a href="<c:url value='/10Jstl/inc/ImportPage.jsp?user_id=Lee&user_pw=7777'/>">
 			ImportPage.jsp바로가기
 	</a>
+	
+	<h3>DB 응용하기</h3>
+	<c:url value="/10JSTL/inc/ImportPage.jsp" var="makeUrl">
+	<%
+	String id = request.getParameter("id");
+	String paramId="", paramPass="", paramName="";
+	if(id!=null){
+		MemberDAO dao = new MemberDAO();
+		Map<String, String> maps = dao.getMemberMap(id);
+		paramId = maps.get("id");
+		paramName = maps.get("name");
+		paramPass = maps.get("pass");
+	%>
+		<c:param name="user_id" value="<%=paramId %>"/>
+		<c:param name="user_pass" value="<%=paramPass %>" />
+		<c:param name="user_name" value="<%=paramName %>" />
+	<%
+	}
+	%>
+	</c:url>
+	DB연동한Url : ${makeUrl }
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
