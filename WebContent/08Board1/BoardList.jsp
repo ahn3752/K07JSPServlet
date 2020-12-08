@@ -92,7 +92,7 @@ List<BbsDTO> bbs = dao.selectListPageSearch(param);//페이지처리O, 회원이
 dao.close();
 %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <jsp:include page="../common/boardHead.jsp" />
 <body>
    <div class="container">
