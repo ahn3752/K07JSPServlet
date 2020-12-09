@@ -1,5 +1,7 @@
 package util;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
@@ -27,5 +29,16 @@ public class FileUtil {
 			e.printStackTrace();
 		}
 		return mr;
+	}
+	
+	public static void deleteFile(HttpServletRequest req, String directory, String filename) {
+		
+		String saveDirectory = req.getServletContext().getRealPath(directory);
+		
+		File f = new File(saveDirectory+File.separator+filename);
+		
+		if(f.exists()) {
+			f.delete();
+		}
 	}
 }
