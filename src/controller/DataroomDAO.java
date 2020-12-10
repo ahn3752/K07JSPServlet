@@ -13,6 +13,8 @@ import javax.naming.InitialContext;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
+import model.BbsDTO;
+
 public class DataroomDAO {
 	Connection con;
 	PreparedStatement psmt;
@@ -249,6 +251,74 @@ public class DataroomDAO {
 		
 		return affected;
 	}
+	
+	//파일 다운로드 횟수 증가
+	public void downCountPlus(String idx) {
+		
+		String sql = "UPDATE dataroom SET "
+				+ " downcount=downcount+1 "
+				+ " WHERE idx=? ";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, idx);
+			psmt.executeUpdate();
+		}
+		catch(Exception e) {}
+	}
+	
+	
+	public List<DataroomDTO> selectListPage(Map map){
+		
+	List<DataroomDTO> bbs = new Vector<DataroomDTO>();
+			
+			String sql = " "
+				+" SELECT * FROM ( "
+				+"	 SELECT Tb.*, ROWNUM rNum FROM ( "
+				+"	    SELECT * FROM dataroom ";
+			if(map.get("Word")!=null)
+			{
+				sql +=" WHERE "+ map.get("Column") +" "
+				  +" LIKE '%"+ map.get("Word") +"%' "; 
+			}
+			sql += "  ORDER BY idx DESC "
+			    +"    ) Tb "
+			    +" ) "
+			    +" WHERE rNum BETWEEN ? AND ?";
+			System.out.println("쿼리문:"+ sql);
+			
+			try {
+				psmt = con.prepareStatement(sql);
+					
+				//JSP에서 계산한 페이지 범위값을 이용해 인파라미터를 설정함.
+				psmt.setString(1, map.get("start").toString());
+				psmt.setString(2, map.get("end").toString());
+				
+				rs = psmt.executeQuery();
+	
+				while(rs.next()) {
+					DataroomDTO dto = new DataroomDTO();
+	
+					dto.setIdx(rs.getString(1));
+					dto.setName(rs.getString(2));
+					dto.setTitle(rs.getString(3));
+					dto.setContent(rs.getString(4));
+					dto.setPostdate(rs.getDate(5));
+					dto.setAttachedfile(rs.getString(6));
+					dto.setDowncount(rs.getInt(7));
+					dto.setPass(rs.getString(8));
+					dto.setVisitcount(rs.getInt(9));
+	
+					bbs.add(dto);
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+	
+			return bbs;
+		}
+		
+	
 }
 
 

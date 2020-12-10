@@ -67,13 +67,13 @@
 				<div class="col-6">
 
 	<button type="button" class="btn btn-secondary"
-		onclick="location.href='../DataRoom/DataPassword?&mode=edit&idx=${param.idx}';">수정하기</button>
+		onclick="location.href='../DataRoom/DataPassword?&mode=edit&idx=${param.idx}&nowPage=${param.nowPage}&searchColumn=${param.searchColumn }&searchWord=${param.searchWord}';">수정하기</button>
 	<button type="button" class="btn btn-success"
-		onclick="location.href='../DataRoom/DataPassword?&mode=delete&idx=${dto.idx}';">삭제하기</button>
+		onclick="location.href='../DataRoom/DataPassword?&mode=delete&idx=${dto.idx}&nowPage=${param.nowPage}&searchColumn=${param.searchColumn }&searchWord=${param.searchWord}';">삭제하기</button>
 		</div>
 				<div class="col-6 text-right pr-5">					
-					<button type="button" class="btn btn-warning" 
-					onclick="location.href='./DataList';">리스트보기</button>
+				<button type="button" class="btn btn-warning" 
+					onclick="location.href='./DataList?nowPage=${param.nowPage}&searchColumn=${param.searchColumn }&searchWord=${param.searchWord}';">리스트보기</button>
 				</div>	
 			</div>
 		<!-- ### 게시판의 body 부분 end ### -->
