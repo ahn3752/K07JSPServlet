@@ -83,8 +83,7 @@
 					<td>${row.visitcount }</td>
 					<td>${row.postdate }</td>
 					<td align="center"><c:if test="${not empty row.attachedfile }">
-							<a
-								href="./Download?filename=${row.attachedfile }&idx=${row.idx}">
+							<a href="./Download?filename=${row.attachedfile }&idx=${row.idx}">
 								<i class="material-icons" style="font-size:20px">attach_file</i>
 							</a>
 						</c:if></td>
