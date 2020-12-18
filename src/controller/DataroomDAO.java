@@ -132,7 +132,7 @@ public class DataroomDAO {
 			psmt.setString(4, dto.getAttachedfile());
 			psmt.setString(5, dto.getPass());
 			
-			affected = psmt.executeUpdate();
+			affected = psmt.executeUpdate();//처리된 행의갯수이므로 1 저장
 		}
 		catch(Exception e) {
 			e.printStackTrace();

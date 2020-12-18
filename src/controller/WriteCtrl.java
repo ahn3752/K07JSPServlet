@@ -67,6 +67,7 @@ public class WriteCtrl extends HttpServlet{
 			DataroomDAO dao = new DataroomDAO();
 			//파일 업로드 성공 및 insert 성공시..
 			sucOrFail = dao.insert(dto);
+			System.out.println(sucOrFail);
 			/*
 			 페이지 처리를 위한 100개 데이터 입력 
 			 
