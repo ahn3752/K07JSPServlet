@@ -113,7 +113,7 @@
 <div class="row mt-3">
 	<div class="col">
 		<!-- 페이지번호 부분 -->
-<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center" >
 	<!-- 매개변수 설명
                totalRecordCount : 게시물의 전체 갯수
                pageSize : 한 페이지에 출력할 게시물의 갯수 

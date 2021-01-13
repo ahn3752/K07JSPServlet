@@ -132,7 +132,7 @@ if(session.getAttribute("USER_ID")!=null &&
 				</div>
 				<div class="col-6 text-right pr-5">					
 					<button type="button" class="btn btn-warning" 
-					onclick="location.href='BoardList.jsp'<%=queryStr%>;">리스트보기</button>
+					onclick="location.href='BoardList.jsp?<%=queryStr%>';">리스트보기</button>
 				</div>	
 			</div>
 		<!-- ### 게시판의 body 부분 end ### -->

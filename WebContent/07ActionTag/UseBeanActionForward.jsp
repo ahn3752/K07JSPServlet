@@ -12,17 +12,17 @@
 	
 	<h2>자바코드를 통해 영역의 객체얻기</h2>
 	<%
-	/*
-		영역에 저장시 Object형으로 변환되므로 사용시에는
-		본래의 형으로 변환해야 한다. 
-	*/
-	MemberDTO memberJ = (MemberDTO) request.getAttribute("member");
+		/*
+			영역에 저장시 Object형으로 변환되므로 사용시에는
+			본래의 형으로 변환해야 한다. 
+		*/
+		MemberDTO memberJ = (MemberDTO) request.getAttribute("member");
 	%>
 	<h3>자바코드로 출력하기</h3>
 	<ul>
-		<li>아이디 : <%=memberJ.getId() %></li>
-		<li>패스워드 : <%=memberJ.getPass() %></li>		
-		<li>이름 : <%=memberJ.getName() %></li>
+		<li>아이디 : <%=memberJ.getId()%></li>
+		<li>패스워드 : <%=memberJ.getPass()%></li>		
+		<li>이름 : <%=memberJ.getName()%></li>
 	</ul>	
  
  

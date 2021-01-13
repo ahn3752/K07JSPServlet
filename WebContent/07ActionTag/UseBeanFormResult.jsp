@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 //폼값받기
 String id = request.getParameter("id"); 
 String pass = request.getParameter("pass");
@@ -25,9 +25,9 @@ member1.setName(name);
 	
 	<h3>자바코드를 통해 받기</h3>	
 	<ul>
-		<li><%=member1.getId() %></li>	
-		<li><%=member1.getPass() %></li>
-		<li><%=member1.getName() %></li>
+		<li><%=member1.getId()%></li>	
+		<li><%=member1.getPass()%></li>
+		<li><%=member1.getName()%></li>
 	</ul>
 	
 
